@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Дек 08 2021 г., 17:00
+-- Время создания: Дек 17 2021 г., 17:17
 -- Версия сервера: 10.4.17-MariaDB
 -- Версия PHP: 8.0.0
 
@@ -62,7 +62,12 @@ INSERT INTO `comments` (`id`, `news_id`, `text`, `date`) VALUES
 (1, 4, 'Hästi', '2021-12-05 18:02:45'),
 (2, 5, 'Selge', '2021-12-06 18:02:45'),
 (3, 2, 'Tore', '2021-12-08 18:04:04'),
-(4, 4, 'OK', '2021-12-12 18:04:04');
+(4, 4, 'OK', '2021-12-12 18:04:04'),
+(5, 4, 'Okei', '2021-12-17 17:21:49'),
+(6, 3, 'Külm', '2021-12-17 17:22:15'),
+(7, 3, 'Talv juba', '2021-12-17 17:23:08'),
+(8, 3, 'Ilus ilm', '2021-12-17 17:23:54'),
+(9, 3, 'Ilus ilm ongi', '2021-12-17 17:24:32');
 
 -- --------------------------------------------------------
 
@@ -164,7 +169,7 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT для таблицы `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT для таблицы `news`

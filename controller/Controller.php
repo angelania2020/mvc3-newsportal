@@ -37,4 +37,33 @@ class Controller
     {
         include_once 'view/error404.php';
     }
-}
+
+    public static function InsertComment($c, $id)
+    {
+        // $c - текст комментария, $id - номер новости, для которой добавлен комментарий
+        Comments::InsertComment($c, $id);
+        // self::NewsByID($id);
+        header('Location:news?id=' . $id . '#ctable');
+    }
+
+    // Список комментариев:
+    public static function Comments($newsid)
+    {
+        $arr = Comments::getCommentByNewsID($newsid);
+        ViewComments::CommentsByNews($arr);
+    }
+
+    // Количество комментариев к новости:
+    public static function CommentsCount($newsid)
+    {
+        $arr = Comments::getCommentsCountByNewsID($newsid);
+        ViewComments::CommentsCount($arr);
+    }
+
+    // Ссылка - переход к списку комментариев
+    public static function CommentsCountWithAnchor($newsid)
+    {
+        $arr = Comments::getCommentsCountByNewsID($newsid);
+        ViewComments::CommentsCountWithAnchor($arr);
+    }
+}  // End class
