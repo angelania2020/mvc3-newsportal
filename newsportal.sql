@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Дек 17 2021 г., 17:17
+-- Время создания: Дек 17 2021 г., 22:47
 -- Версия сервера: 10.4.17-MariaDB
 -- Версия PHP: 8.0.0
 
@@ -105,24 +105,23 @@ INSERT INTO `news` (`id`, `title`, `text`, `picture`, `category_id`, `user_id`) 
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
-  `name` varchar(100) COLLATE utf8_estonian_ci NOT NULL,
-  `picture` blob NOT NULL,
+  `username` varchar(100) COLLATE utf8_estonian_ci NOT NULL,
   `job` varchar(100) COLLATE utf8_estonian_ci NOT NULL,
   `email` varchar(50) COLLATE utf8_estonian_ci NOT NULL,
-  `telefon` varchar(20) COLLATE utf8_estonian_ci NOT NULL,
   `login` varchar(20) COLLATE utf8_estonian_ci NOT NULL,
-  `parol` varchar(255) COLLATE utf8_estonian_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8_estonian_ci NOT NULL,
   `status` varchar(20) COLLATE utf8_estonian_ci NOT NULL,
-  `registration_date` date NOT NULL
+  `registration_date` date NOT NULL,
+  `pass` varchar(255) COLLATE utf8_estonian_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_estonian_ci;
 
 --
 -- Дамп данных таблицы `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `picture`, `job`, `email`, `telefon`, `login`, `parol`, `status`, `registration_date`) VALUES
-(1, 'Admin', '', 'Portal admin', 'admin@newsportal.ee', '+37255667788', 'admin', 'admin', 'admin', '2021-12-01'),
-(2, 'Anonim', '', 'Portal anonim', 'anonim@newsportal.ee', '+37255443322', 'anonim', 'anonim', 'user', '2021-12-03');
+INSERT INTO `users` (`id`, `username`, `job`, `email`, `login`, `password`, `status`, `registration_date`, `pass`) VALUES
+(1, 'admin', 'Portal admin', 'admin@newsportal.ee', 'admin', '$2y$12$pxB2ofiiNZkxObmbBvBOyegwCjHCVFYhapjiSsdYXUaJ9Z1IH6pQW', 'admin', '2021-12-01', '123456'),
+(2, 'anonim', 'Portal anonim', 'user@newsportal.ee', 'anonim', '$2y$10$dYK1sCogKL/zZBef.V/gBeynL5mdt0QxZlwvEUBkS0jkdXYRMPHRa', 'user', '2021-12-03', '111111');
 
 --
 -- Индексы сохранённых таблиц
@@ -153,7 +152,8 @@ ALTER TABLE `news`
 -- Индексы таблицы `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `email` (`email`);
 
 --
 -- AUTO_INCREMENT для сохранённых таблиц
