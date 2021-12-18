@@ -14,6 +14,16 @@ if ($path == '' or $path == 'index' or $path == 'index.php') {
     $response = Controller::NewsByID($_GET['id']);
 } elseif ($path == 'insertcomment' and isset($_GET['comment'], $_GET['id'])) {
     $response = Controller::InsertComment($_GET['comment'], $_GET['id']);
-} else {
+}
+// REGISTER USER
+elseif ($path == 'registerForm') {
+    // Form register
+    $response = Controller::registerForm();
+} elseif ($path == 'registerAnswer') {
+    // Register user
+    $response = Controller::registerUser();
+}
+// Error page
+else {
     $response = Controller::error404();
 }

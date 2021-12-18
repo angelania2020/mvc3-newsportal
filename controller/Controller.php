@@ -66,4 +66,15 @@ class Controller
         $arr = Comments::getCommentsCountByNewsID($newsid);
         ViewComments::CommentsCountWithAnchor($arr);
     }
+
+    // РЕГИСТРАЦИЯ
+    public static function registerForm()
+    {
+        include_once('view/formRegister.php');
+    }
+    public static function registerUser()
+    {
+        $result = Register::registerUser();
+        include_once('view/answerRegister.php');
+    }
 }  // End class
