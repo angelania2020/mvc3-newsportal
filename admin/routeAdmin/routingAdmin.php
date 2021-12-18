@@ -18,6 +18,14 @@ elseif ($path == 'login') {
 // listNews
 elseif ($path == 'newsAdmin') {
     $response = ControllerAdminNews::newsList();
-} else {  // Страница не существует
+}
+// add news
+elseif ($path == 'newsAdd') {
+    $response = ControllerAdminNews::newsAddForm();
+} elseif ($path == 'newsAddResult') {
+    $response = ControllerAdminNews::newsAddResult();
+}
+// Страница не существует
+else {
     $response = ControllerAdmin::error404();
 }
