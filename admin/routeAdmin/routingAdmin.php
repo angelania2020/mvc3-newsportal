@@ -5,15 +5,19 @@ $path = explode('/', $host)[$num];
 
 if ($path == '' or $path == 'index.php') {
     // Главная страница -
-    $response = controllerAdmin::formLoginSite();
+    $response = ControllerAdmin::formLoginSite();
 }
 // ---- ВХОД ----
 elseif ($path == 'login') {
     // Форма входа
-    $response = controllerAdmin::loginAction();
+    $response = ControllerAdmin::loginAction();
 } elseif ($path == 'logout') {
     // Выход
-    $response = controllerAdmin::logoutAction();
+    $response = ControllerAdmin::logoutAction();
+}
+// listNews
+elseif ($path == 'newsAdmin') {
+    $response = ControllerAdminNews::newsList();
 } else {  // Страница не существует
-    $response = controllerAdmin::error404();
+    $response = ControllerAdmin::error404();
 }

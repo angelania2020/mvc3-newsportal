@@ -20,7 +20,7 @@
             <li><a href="#">Kategooriad<i class="fa fa-angle-down"></i></a>
                 <ul class="submenu">
                     <?php
-                    Controller::AllCategory();
+                    Controller::allCategory();
                     ?>
                 </ul>
             </li>

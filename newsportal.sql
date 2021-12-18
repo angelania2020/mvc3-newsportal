@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Дек 17 2021 г., 22:47
+-- Время создания: Дек 18 2021 г., 15:36
 -- Версия сервера: 10.4.17-MariaDB
 -- Версия PHP: 8.0.0
 
@@ -121,7 +121,9 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `username`, `job`, `email`, `login`, `password`, `status`, `registration_date`, `pass`) VALUES
 (1, 'admin', 'Portal admin', 'admin@newsportal.ee', 'admin', '$2y$12$pxB2ofiiNZkxObmbBvBOyegwCjHCVFYhapjiSsdYXUaJ9Z1IH6pQW', 'admin', '2021-12-01', '123456'),
-(2, 'anonim', 'Portal anonim', 'user@newsportal.ee', 'anonim', '$2y$10$dYK1sCogKL/zZBef.V/gBeynL5mdt0QxZlwvEUBkS0jkdXYRMPHRa', 'user', '2021-12-03', '111111');
+(2, 'anonim', 'Portal anonim', 'user@newsportal.ee', 'anonim', '$2y$10$dYK1sCogKL/zZBef.V/gBeynL5mdt0QxZlwvEUBkS0jkdXYRMPHRa', 'user', '2021-12-03', '111111'),
+(4, 'olga', '', 'olga@mail.com', '', '$2y$10$XCWVYDffVMqEiLYKfdpsfOhQRAL5b2gDhORecCYIzlMWciolCz4mu', 'user', '2021-12-18', '123456'),
+(5, 'oleg', '', 'oleg@mail.com', '', '$2y$10$AiE1XpwU.m3LvzjyRCUsouBntsaZmMlzm7bcwECFxTJDp6ibjzos6', 'user', '2021-12-18', '123123');
 
 --
 -- Индексы сохранённых таблиц
@@ -181,7 +183,7 @@ ALTER TABLE `news`
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц

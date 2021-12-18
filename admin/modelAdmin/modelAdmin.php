@@ -1,5 +1,5 @@
 <?php
-class modelAdmin
+class ModelAdmin
 {
     // АВТОРИЗАЦИЯ АДМИНА
     public static function userAuthentication()

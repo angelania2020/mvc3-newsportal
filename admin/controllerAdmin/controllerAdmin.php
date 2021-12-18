@@ -1,5 +1,5 @@
 <?php
-class controllerAdmin
+class ControllerAdmin
 {
     public static function formLoginSite()
     {
@@ -8,7 +8,7 @@ class controllerAdmin
     // Форма авторизации админа
     public static function loginAction()
     {
-        $logIn = modelAdmin::userAuthentication();
+        $logIn = ModelAdmin::userAuthentication();
         if (isset($logIn) and $logIn == true) {
             include_once('viewAdmin/startAdmin.php');
         } else {
@@ -19,7 +19,7 @@ class controllerAdmin
     // Выход из админ-панели
     public static function logoutAction()
     {
-        modelAdmin::userLogout();
+        ModelAdmin::userLogout();
         include_once('viewAdmin/formLogin.php');
     }
     // Страница Error
