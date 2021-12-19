@@ -20,4 +20,18 @@ class ControllerAdminNews
         $test = ModelAdminNews::getNewsAdd();
         include_once('viewAdmin/newsAddForm.php');
     }
+
+    // edit
+    public static function newsEditForm($id)
+    {
+        $arr = ModelAdminCategory::getCategoryList();
+        $detail = ModelAdminNews::getNewsDetail($id);
+        include_once('viewAdmin/newsEditForm.php');
+    }
+
+    public static function newsEditResult($id)
+    {
+        $test = ModelAdminNews::getNewsEdit($id);
+        include_once('viewAdmin/newsEditForm.php');
+    }
 }  // class
