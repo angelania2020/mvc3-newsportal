@@ -31,6 +31,12 @@ elseif ($path == 'newsEdit' && isset($_GET['id'])) {
 } elseif ($path == 'newsEditResult' && isset($_GET['id'])) {
     $response = ControllerAdminNews::newsEditResult($_GET['id']);
 }
+// delete news
+elseif ($path == 'newsDel' && isset($_GET['id'])) {
+    $response = ControllerAdminNews::newsDeleteForm($_GET['id']);
+} elseif ($path == 'newsDelResult' && isset($_GET['id'])) {
+    $response = ControllerAdminNews::newsDeleteResult($_GET['id']);
+}
 // Страница не существует
 else {
     $response = ControllerAdmin::error404();

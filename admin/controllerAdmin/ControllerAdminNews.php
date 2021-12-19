@@ -34,4 +34,18 @@ class ControllerAdminNews
         $test = ModelAdminNews::getNewsEdit($id);
         include_once('viewAdmin/newsEditForm.php');
     }
+
+    // delete
+    public static function newsDeleteForm($id)
+    {
+        $arr = ModelAdminCategory::getCategoryList();
+        $detail = ModelAdminNews::getNewsDetail($id);
+        include_once('viewAdmin/newsDeleteForm.php');
+    }
+
+    public static function newsDeleteResult($id)
+    {
+        $test = ModelAdminNews::getNewsDelete($id);
+        include_once('viewAdmin/newsDeleteForm.php');
+    }
 }  // class

@@ -16,7 +16,7 @@ class ModelAdminNews
     {
         $test = false;
         if (isset($_POST['save'])) {
-            if (isset($_POST['title']) && isset($_POST['text']) && isset($_POST['idCategory']) && isset($_POST['picture'])) {
+            if (isset($_POST['title']) && isset($_POST['text']) && isset($_POST['idCategory'])) {
 
                 $title = $_POST['title'];
                 $text = $_POST['text'];
@@ -84,6 +84,21 @@ class ModelAdminNews
                 if ($item == true) {
                     $test = true;
                 }
+            }
+        }
+        return $test;
+    }
+
+    // Delete
+    public static function getNewsDelete($id)
+    {
+        $test = false;
+        if (isset($_POST['save'])) {
+            $sql = "DELETE FROM `news` WHERE `news`.`id` = " . $id;
+            $db = new Database();
+            $item = $db->executeRun($sql);
+            if ($item == true) {
+                $test = true;
             }
         }
         return $test;
